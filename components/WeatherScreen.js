@@ -54,9 +54,9 @@ export default function WeatherScreen ({ navigation, route, API_KEY }){
             <View style={styles.container}>
                 <Image style={{width: 130, height: 130}} source={{uri: "https://openweathermap.org/img/w/" + icon + ".png"}}/>
                 <Text style={styles.title}>PUP Weather Expert</Text>
-                <Text>{weatherCondition ? 'Today ' + weatherInfo[weatherCondition].title : ' Loading weather conditions'}</Text>
-                <Text>{location ? 'Latitude: ' + location.latitude + ' and Longitude: ' + location.longitude : 'Waiting...'} </Text>
-                <Text>{temperature ? 'Today ' + temperature : ' Loading weather conditions'}</Text>
+                <Text style={styles.paragraph1}>{weatherCondition ? 'Today ' + weatherInfo[weatherCondition].title : ' Loading weather conditions'}</Text>
+                <Text style={styles.paragraph2}>{temperature ? temperature + '°': ' Loading weather conditions'}</Text>
+                <Image style={{width: 130, height: 130}} source={weatherDog}/>
             </View>
         );
     
@@ -70,14 +70,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     title: {
-        fontSize: 26,
+        fontSize: 32,
         color: "lightseagreen",
     },
     paragraph1: {
-        fontSize: 24,
+        fontSize: 28,
         color: "#fff",
     },
     paragraph2: {
         color: "#fff",
+        fontSize: 24,
     }
 });
