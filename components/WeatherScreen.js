@@ -45,7 +45,7 @@ export default function WeatherScreen ({ navigation, route, API_KEY }){
         getLocation().then(()=> {
             fetchWeather();
         })
-    }, []);
+    });
   
 
 
