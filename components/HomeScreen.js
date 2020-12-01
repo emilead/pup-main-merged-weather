@@ -43,12 +43,12 @@ export default function HomeScreen({ navigation, route }) {
         <TouchableOpacity style={styles.menuButton}
           onPress={() => console.log('hej', newImage, ASPECT_RATIO,)}
         >
-          <Text style={styles.paragraph2}> Hej-tester</Text>
+          <Text style={styles.paragraph2}> Menu test</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuButton} 
           onPress={() => navigation.navigate('Weather')} >
-          <Text style={styles.paragraph2}> VÆÆÆR!ET</Text>
+          <Text style={styles.paragraph2}> Weather</Text>
         </TouchableOpacity>
         </View>
 
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     backgroundColor: 'transparent',
     marginBottom: 400,
+    justifyContent: 'space-between',
   },
   members: {
     flexDirection: 'column',
