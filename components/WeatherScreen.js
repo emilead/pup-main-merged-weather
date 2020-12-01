@@ -31,7 +31,7 @@ export default function WeatherScreen ({ navigation, route, API_KEY }){
 
     //Den gider ikke hente API_KEY ordentligt, så jeg har bare sat den ind i url'en
     const fetchWeather = () => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&APPID=7fa32d278b6ae722afa5d87773d3e9dc&units=metric`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&APPID=849338767c0e95025b5559533d26b7c4&units=metric`)
         .then(res => res.json())
         .then(json => {
             setTemperature(json.main.temp);
@@ -40,12 +40,11 @@ export default function WeatherScreen ({ navigation, route, API_KEY }){
         });
       };
 
-//Tror at der skal noget await ind - fetchweather kan ikke hente location ordentligt
     useEffect(() => {
         getLocation().then(()=> {
             fetchWeather();
         })
-    });
+    }, [location]);
   
 
 
