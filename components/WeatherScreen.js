@@ -41,10 +41,10 @@ export default function WeatherScreen ({ navigation, route, API_KEY }){
       };
 
     useEffect(() => {
-        getLocation().then(()=> {
-            fetchWeather();
+        getLocation().then(()=> { if (location != null){ //run fetch only if we have a location
+            fetchWeather();}
         })
-    }, [location]);
+    }, [location]); //run the 'useEffect' hook when location changes
   
 
 
